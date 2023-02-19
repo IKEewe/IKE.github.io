@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電子目安箱（生徒会）</title>
+</head>
+<body>
+  <h1>電子目安箱</h1>
+	
+	<h2>注意事項</h2>
+	<ul>
+		<li>回答には、正直なご意見をご記入ください。</li>
+		<li>アンケート回答は匿名です。</li>
+    <li>*回答が個人で欲しい場合のみお名前をご記入ください*</li>
+    <li>必ずしも採用されるわけではございません。</li>
+	</ul>
+	
+	<h2>学年チェック欄</h2>
+  <H3>ご自身の学年をチェックして下さい。</H3>
+	<form>
+    <input type="checkbox" name="option" value="1" onclick="handleClick(this)">1年生<br>
+    <input type="checkbox" name="option" value="2" onclick="handleClick(this)">2年生<br>
+    <input type="checkbox" name="option" value="3" onclick="handleClick(this)">3年生<br>
+  </form>
+  <h2>名前記入欄</h2>
+  <h3>＊必要な場合のみご記入ください＊</h3>
+  <textarea id="opinion" name="opinion" rows="1" cols="50"></textarea><br>
+  <h2>部活記入欄</h2>
+  <h3>＊必要な場合のみご記入ください＊</h3>
+  <textarea id="opinion" name="opinion" rows="1" cols="50"></textarea><br>
+  <script>
+    let prev = null;
+    function handleClick(current) {
+      if (current.checked && prev !== current) {
+        if (prev !== null) {
+          prev.checked = false;
+        }
+        prev = current;
+      } else {
+        prev = null;
+      }
+    }
+  </script>
+	</form>
+	
+	<h2>意見欄</h2>
+    <H3>当てはまる項目にチェックを入れてください。</H3>
+    <form>
+      <input type="checkbox" name="option" value="1" onclick="handleClick(this)">意見<br>
+      <input type="checkbox" name="option" value="2" onclick="handleClick(this)">要望<br>
+      <input type="checkbox" name="option" value="3" onclick="handleClick(this)">質問<br>
+	</form>
+  <script>
+    let prev = null;
+    function handleClick(current) {
+      if (current.checked && prev !== current) {
+        if (prev !== null) {
+          prev.checked = false;
+        }
+        prev = current;
+      } else {
+        prev = null;
+      }
+    }
+  </script>
+  </form>
+
+	<form>
+		<label for="opinion">意見要望質問記入欄</label><br>
+		<textarea id="opinion" name="opinion" rows="10" cols="50"></textarea><br>
+    <label for="opinion">理由</label><br>
+		<textarea id="opinion" name="opinion" rows="10" cols="50"></textarea><br>
+		<input type="submit" value="送信">
+	</form>
+  <form method="post" action="mailto:ike9696@icloud.com" enctype="text/plain">
+    
+  
+</body>
+</html>
